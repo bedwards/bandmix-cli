@@ -1,5 +1,8 @@
+import tlon_uqbar
+
+
 def main():
-    print("Hello from tlon-uqbar!")
+    print(tlon_uqbar.message)
 
 
 if __name__ == "__main__":
