@@ -3,6 +3,7 @@
 import click
 
 from bandmix_cli import __version__
+from bandmix_cli.commands.auth import auth
 from bandmix_cli.commands.search import search
 
 
@@ -12,6 +13,7 @@ def cli():
     """bandmix-cli — CLI tool for BandMix.com."""
 
 
+cli.add_command(auth)
 cli.add_command(search)
 
 
