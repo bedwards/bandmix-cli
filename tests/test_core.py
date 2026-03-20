@@ -1,5 +1,5 @@
-from tlon_uqbar import message
+from bandmix_cli import __version__
 
 
-def test_message_is_not_empty():
-    assert len(message) > 0
+def test_version_is_set():
+    assert __version__ == "0.2.0"

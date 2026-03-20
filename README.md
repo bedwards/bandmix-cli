@@ -1,8 +1,6 @@
-# Tlön, Uqbar
+# bandmix-cli
 
-A Python project scaffold with modern tooling.
-
-> *"Tlön, Uqbar, Orbis Tertius"* — Jorge Luis Borges
+A command-line tool for reading and writing data on [BandMix.com](https://www.bandmix.com). The site has no public API, so the CLI operates via authenticated HTTP requests, scraping HTML responses and submitting standard form POSTs.
 
 ## Requirements
 
@@ -13,58 +11,37 @@ A Python project scaffold with modern tooling.
 
 ```bash
 uv sync --all-groups
-uv run main
+bandmix auth login --email you@example.com
+bandmix search --instruments Drums --genre Country --radius 50
 ```
+
+## Features
+
+- **Authentication** — Session-based login with cookie persistence
+- **Profile** — Read and update your BandMix profile
+- **Search** — Find musicians and bands with filters (instrument, genre, location, etc.)
+- **Member** — View any member's public profile
+- **Messages** — Read and send messages (Premier membership required for sending)
+- **Feed** — View activity feed
+- **Photos / Music / Videos** — Manage media uploads
+- **Calendar** — Manage gig calendar
+- **Seeking** — Manage "Now Seeking" ads
+- **Music List** — Manage bookmarked profiles
+- **Settings** — Email, match mailer, dashboard options
 
 ## Development
 
-### Install dependencies
-
 ```bash
 uv sync --all-groups
-```
-
-### Run tests
-
-```bash
 uv run pytest
-```
-
-### Lint & format
-
-```bash
 uv run ruff check
 uv run ruff format --check
-```
-
-### Pre-commit hooks
-
-```bash
 uv run pre-commit install
-uv run pre-commit run --all-files
-```
-
-### Clean build artifacts
-
-```bash
-python scripts/clean.py
 ```
 
 ## CI
 
-GitHub Actions runs lint, format check, and tests on every push and PR to `main`. See [`.github/workflows/ci.yml`](.github/workflows/ci.yml).
-
-## Project structure
-
-```
-src/tlon_uqbar/       # Package source
-  __init__.py          # Exports `message`
-  main.py              # CLI entry point
-scripts/
-  clean.py             # Remove __pycache__, .pytest_cache, etc.
-tests/
-  test_core.py         # Core tests
-```
+GitHub Actions runs lint, format check, and tests on every push and PR to `main`.
 
 ## License
 
